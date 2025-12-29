@@ -7,8 +7,10 @@ import {
   IconMessage,
   IconPencil,
   IconRobotFace,
+  IconSchool,
   IconSparkles
 } from "@tabler/icons-react"
+import Link from "next/link"
 import { FC } from "react"
 import { TabsList } from "../ui/tabs"
 import { WithTooltip } from "../ui/with-tooltip"
@@ -82,6 +84,18 @@ export const SidebarSwitcher: FC<SidebarSwitcherProps> = ({
 
         {/* TODO */}
         {/* <Alerts /> */}
+
+        <WithTooltip
+          display={<div>Learning Center</div>}
+          trigger={
+            <Link
+              href="/learn"
+              className="hover:bg-accent flex size-[34px] cursor-pointer items-center justify-center rounded"
+            >
+              <IconSchool size={SIDEBAR_ICON_SIZE} />
+            </Link>
+          }
+        />
 
         <WithTooltip
           display={<div>Profile Settings</div>}
