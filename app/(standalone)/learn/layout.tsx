@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ReactNode } from "react"
+import "../../[locale]/globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -9,17 +10,11 @@ export const metadata: Metadata = {
   description: "Learn operations management and lean process principles"
 }
 
-interface LearnLayoutProps {
-  children: ReactNode
-}
-
-export default function LearnLayout({ children }: LearnLayoutProps) {
+export default function LearnLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="min-h-screen bg-zinc-950 text-zinc-100">
-          {children}
-        </div>
+    <html lang="en" className="dark">
+      <body className={`${inter.className} bg-zinc-950 text-zinc-100`}>
+        {children}
       </body>
     </html>
   )
